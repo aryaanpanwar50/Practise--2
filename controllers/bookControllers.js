@@ -33,7 +33,7 @@ const getBooks = async(req,res)=>{
      }
 }
 
-const getBooksById =async()=>{
+const getBooksById =async(req,res)=>{
 
     try{
         const id =  req.params.id;
@@ -43,7 +43,7 @@ const getBooksById =async()=>{
         }
         res.status(200).json({data:book})
     }catch(error){
-        res.status(500).send(error.message)
+        return res.status(500).send(error.message)
     }
 }
 
